@@ -4,6 +4,7 @@
 
 FILE *file;
 long q;
+long lastq = -1;
 const int udef = -1;
 
 void open(const char *fname) {
@@ -20,6 +21,7 @@ char read() {
 }
 
 void success() {
+    lastq = q;
     q = ftell(file);
 }
 
@@ -90,9 +92,6 @@ token num() {
     int prior = 0;
 
     while(actual != udef) {
-        if (actual == udef) {
-        }
-
         prior = actual;
         char c = read();
 
@@ -159,12 +158,14 @@ bool eof() {
 
 token next() {
     wsp();
+    if (lastq == q && q != 0) return _eof;
 
     if (id()) return _id;
 
     token tnum = num();
     if (tnum != _err) return tnum;
 
+    read();
     if (eof()) return _eof;
     
     return _err;
