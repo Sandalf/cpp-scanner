@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "__locale": "cpp",
+        "__string": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "iostream": "cpp",
+        "bitset": "cpp",
+        "ostream": "cpp",
+        "iosfwd": "cpp",
+        "iterator": "cpp",
+        "new": "cpp"
+    }
+}
