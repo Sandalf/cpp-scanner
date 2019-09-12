@@ -4,12 +4,7 @@
 typedef enum { _id, _nat, _real, _eof, _err } token;
 
 extern void open(const char *fname);
-extern void cose();
+extern void close();
 extern token next();
-
-void close();
-void success();
-void fallback();
-void fail();
 
 #endif

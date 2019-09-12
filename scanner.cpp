@@ -13,11 +13,11 @@ void open(const char *fname) {
 
 void close() {
     fclose(file);
-};
+}
 
 char read() {
-    fclose(file);
-};
+    return fgetc(file);
+}
 
 void success() {
     q = ftell(file);
@@ -148,5 +148,3 @@ token next() {
     
     return _err;
 }
-
-
