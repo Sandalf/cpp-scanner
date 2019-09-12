@@ -20,7 +20,6 @@ int main()
             case _err: printf("Error in position\n"); break;
             default: break;
         }
-
     } while(t != _eof && t != _err);
 
     close();
